@@ -152,7 +152,7 @@ def home():
                 <h2>/messages/&lt;message_id&gt; (DELETE)</h2>
                 <p>Delete a message by ID.</p>
                 <div class="input-output">
-                    <h3>Input:</h3>
+                    <h3>Input::</h3>
                     <p>None</p>
                     <h3>Output:</h3>
                     <pre>
