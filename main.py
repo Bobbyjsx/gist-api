@@ -192,8 +192,17 @@ def signup():
 @app.route('/messages', methods=['GET'])
 def get_messages():
     messages = supabase.table('messages').select().execute()
-    message_list = [{'id': message['id'], 'body': message['body'], 'user_id': message['user_id'],
-                      'sent_at': message['sent_at']} for message in messages['data']]
+    message_list = []
+    for message in messages['data']:
+        user_id = message.get('user_id', None)  # Use None as default value if 'user_id' is missing
+        message_item = {
+            'id': message['id'],
+            'body': message['body'],
+            'user_id': user_id,
+            'sent_at': message['sent_at']
+        }
+        message_list.append(message_item)
+
     return jsonify(message_list)
 
 @app.route('/messages', methods=['POST'])
