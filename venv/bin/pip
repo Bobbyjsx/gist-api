@@ -1,4 +1,4 @@
-#!/Users/adaugogodsgift/Desktop/workspace/python/gist-api/venv/bin/python3.11
+#!/Users/adaugogodsgift/Desktop/GIST/gist-api/venv/bin/python
 # -*- coding: utf-8 -*-
 import re
 import sys
