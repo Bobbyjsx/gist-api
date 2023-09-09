@@ -1,5 +1,4 @@
 from dotenv import load_dotenv
-import uvicorn
 load_dotenv()
 from flask import Flask, request, jsonify
 from datetime import datetime
@@ -216,6 +215,3 @@ def delete_message(message_id):
     result = supabase.table('messages').delete().eq("id", message_id).execute()
     return jsonify(result)
 
-if __name__ == '__main__':
-    # uvicorn.run(app, host="0.0.0.0", port=8000)
-    app.run()
